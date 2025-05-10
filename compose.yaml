@@ -10,6 +10,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/usr/src/web
-    command: sh -c 'cd hanbai-client && npm run dev'
+    command: sh -c 'cd hanbai-client && npm i && npm run dev'
     # 永続化設定(docker-compose-up後も起動し続ける)
     tty: true
+    # リアルタイムに反映
