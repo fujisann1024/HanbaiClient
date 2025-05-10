@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  my-web:
+    image: hanbai-next
+    container_name: hanbai-client
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/usr/src/web
+    command: sh -c 'cd hanbai-client && npm run dev'
+    # 永続化設定(docker-compose-up後も起動し続ける)
+    tty: true
